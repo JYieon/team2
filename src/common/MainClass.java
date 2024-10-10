@@ -31,8 +31,12 @@ public class MainClass {
 				o.display();
 				break;
 			case 2:
+				if(o.getMode()) {
+					r.display();
+				}else {
+					System.out.println("세탁기 전원이 off상태 입니다.");
+				}
 				
-				r.display();
 				break;
 			case 3:
 			case 4:
