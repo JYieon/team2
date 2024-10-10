@@ -2,8 +2,14 @@ package common;
 
 import java.util.Scanner;
 
+import 전영민.Ex01;
+
+
 public class MainClass {
+	
 	public static void main(String[] args) {
+		Ex01 t = new Ex01();
+	
 		//세탁기
 		Scanner input = new Scanner(System.in);
 		
@@ -23,7 +29,7 @@ public class MainClass {
 			case 1:
 			case 2:
 			case 3:
-			case 4:
+			case 4: t.display();
 			case 5:
 			case 6:
 				
