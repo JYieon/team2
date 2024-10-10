@@ -2,6 +2,8 @@ package common;
 
 import java.util.Scanner;
 
+import dry.Dry_;
+
 public class MainClass {
 	public static void main(String[] args) {
 		//세탁기
@@ -25,6 +27,29 @@ public class MainClass {
 			case 3:
 			case 4:
 			case 5:
+				Dry_ t = new Dry_();
+				int dry_time;
+				boolean start = t.getOn();
+				int time;
+				System.out.print("건조 할 시간 : ");
+				dry_time = input.nextInt();
+				t.setDry_time(dry_time);
+				t.setTime(dry_time);
+				time = t.getTime();
+				t.setN("ON");
+				while(start) {
+					if(time == dry_time) {
+						System.out.println("작동 상태 : " + t.getN());
+					}
+					time -= 1;
+					System.out.println("현재 남은 시간 :" + time);
+					if(time == 0) {
+						t.setN("OFF");
+						System.out.println("작동 상태 : " + t.getN());
+						start = t.getOff();
+					}
+				}
+				break;
 			case 6:
 				
 			}
