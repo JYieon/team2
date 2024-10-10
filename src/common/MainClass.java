@@ -15,6 +15,7 @@ public class MainClass {
 		
 		Rinse r = new Rinse();
 		onoff o = new onoff();
+		Dry_ d = new Dry_();
 		boolean bool = true;
 		while(bool) {
 			System.out.println("-----------------------------");
@@ -39,28 +40,12 @@ public class MainClass {
 			case 3:
 			case 4:
 			case 5:
-				Dry_ t = new Dry_();
-				int dry_time;
-				boolean start = t.getOn();
-				int time;
-				System.out.print("건조 할 시간 : ");
-				dry_time = input.nextInt();
-				t.setDry_time(dry_time);
-				t.setTime(dry_time);
-				time = t.getTime();
-				t.setN("ON");
-				while(start) {
-					if(time == dry_time) {
-						System.out.println("작동 상태 : " + t.getN());
-					}
-					time -= 1;
-					System.out.println("현재 남은 시간 :" + time);
-					if(time == 0) {
-						t.setN("OFF");
-						System.out.println("작동 상태 : " + t.getN());
-						start = t.getOff();
-					}
+				if(o.getMode()) {
+					d.display();
+				}else {
+					System.out.println("세탁기 전원이 off상태 입니다.");
 				}
+				
 				break;
 			case 6:
 				System.out.println("[종료]");
