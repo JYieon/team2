@@ -22,7 +22,7 @@ public class Washer {
 		System.out.println("----탈수 담당-----");
 
 		while(true) {
-			System.out.println("1. 현재 모드");
+			System.out.println("1. 현재 탈수 모드");
 			System.out.println("2. 탈수 ON");
 			System.out.println("3. 탈수 OFF");
 			System.out.println("4. 탈수 세기");
@@ -34,9 +34,9 @@ public class Washer {
 			switch (num) {
 			case 1 : 
 				if(getMode()) {
-					System.out.println("현재 헹굼 모드 : on");
+					System.out.println("현재 탈수 모드 : on");
 				}else {
-					System.out.println("현재 헹굼 모드 : off");
+					System.out.println("현재 탈수 모드 : off");
 				}
 
 				break;

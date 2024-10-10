@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 import 김수지.Washer;
 
-
 public class MainClass {
 	public static void main(String[] args) {
 		Washer w = new Washer();
