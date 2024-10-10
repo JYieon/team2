@@ -1,6 +1,7 @@
 package common;
 
 import 최지연.Rinse;
+import 이유나.onoff;
 
 import java.util.Scanner;
 
@@ -11,8 +12,9 @@ public class MainClass {
 		int num;
 		
 		Rinse r = new Rinse();
-		
-		while(true) {
+		onoff o = new onoff();
+		boolean bool = true;
+		while(bool) {
 			System.out.println("-----------------------------");
 			System.out.println("[세탁기]");
 			System.out.println("1. 전원");
@@ -26,6 +28,8 @@ public class MainClass {
 			
 			switch(num) {
 			case 1:
+				o.display();
+				break;
 			case 2:
 				
 				r.display();
@@ -34,7 +38,9 @@ public class MainClass {
 			case 4:
 			case 5:
 			case 6:
-				
+				System.out.println("[종료]");
+				bool = false;
+				break;
 			}
 		}
 	}
