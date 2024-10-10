@@ -1,4 +1,4 @@
-package dry;
+package 정성호;
 
 import java.util.Scanner;
 

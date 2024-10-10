@@ -2,10 +2,9 @@ package common;
 
 import 최지연.Rinse;
 import 이유나.onoff;
+import 정성호.Dry_;
 
 import java.util.Scanner;
-
-import dry.Dry_;
 
 public class MainClass {
 	public static void main(String[] args) {
