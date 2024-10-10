@@ -2,8 +2,11 @@ package common;
 
 import java.util.Scanner;
 
+import 김수지.Washer;
+
 public class MainClass {
 	public static void main(String[] args) {
+		Washer w = new Washer();
 		//세탁기
 		Scanner input = new Scanner(System.in);
 		
@@ -22,7 +25,7 @@ public class MainClass {
 			switch(num) {
 			case 1:
 			case 2:
-			case 3:
+			case 3:w.display();
 			case 4:
 			case 5:
 			case 6:
