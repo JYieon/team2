@@ -1,18 +1,28 @@
 package common;
 
+import 최지연.Rinse;
+import 이유나.onoff;
+import 정성호.Dry_;
+
 import java.util.Scanner;
 
 import 김수지.Washer;
 
+
 public class MainClass {
 	public static void main(String[] args) {
 		Washer w = new Washer();
-		//세탁기
+		//세탁기. 기본적으로 전원 꺼져있음
 		Scanner input = new Scanner(System.in);
-		
 		int num;
 		
-		while(true) {
+		Rinse r = new Rinse();
+		onoff o = new onoff();
+		Dry_ d = new Dry_();
+		boolean bool = true;
+		while(bool) {
+			System.out.println("-----------------------------");
+			System.out.println("[세탁기]");
 			System.out.println("1. 전원");
 			System.out.println("2. 헹굼");
 			System.out.println("3. 탈수");
@@ -24,12 +34,39 @@ public class MainClass {
 			
 			switch(num) {
 			case 1:
+				o.display();
+				break;
 			case 2:
-			case 3:w.display();
+				if(o.getMode()) {
+					r.display();
+				}else {
+					System.out.println("세탁기 전원이 off상태 입니다.");
+				}
+				
+				break;
+			case 3:
+				
+				if(o.getMode()) {
+					w.display();
+				}else {
+					System.out.println("세탁기 전원이 off상태 입니다.");
+				}
+				
+				break;
+
 			case 4:
 			case 5:
-			case 6:
+				if(o.getMode()) {
+					d.display();
+				}else {
+					System.out.println("세탁기 전원이 off상태 입니다.");
+				}
 				
+				break;
+			case 6:
+				System.out.println("[종료]");
+				bool = false;
+				break;
 			}
 		}
 	}
