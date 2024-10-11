@@ -1,30 +1,24 @@
 package common;
 
+import java.util.Scanner;
 import 최지연.Rinse;
 import 이유나.onoff;
 import 정성호.Dry_;
-
-import java.util.Scanner;
-
 import 전영민.Ex01;
-
-
 import 김수지.Washer;
 
 public class MainClass {
-	
+	//세탁기. 기본적으로 전원 꺼져있음
 	public static void main(String[] args) {
-		Ex01 t = new Ex01();
-	
-		//세탁기
-		Washer w = new Washer();
-		//세탁기. 기본적으로 전원 꺼져있음
+		Ex01 t = new Ex01(); // 물온도
+		Washer w = new Washer(); //탈수
+		Rinse r = new Rinse(); //헹굼
+		onoff o = new onoff(); //전원
+		Dry_ d = new Dry_(); //건조
+		
 		Scanner input = new Scanner(System.in);
 		int num;
 		
-		Rinse r = new Rinse();
-		onoff o = new onoff();
-		Dry_ d = new Dry_();
 		boolean bool = true;
 		while(bool) {
 			System.out.println("-----------------------------");
@@ -39,10 +33,10 @@ public class MainClass {
 			num = input.nextInt();
 			
 			switch(num) {
-			case 1:
+			case 1: //전원
 				o.display();
 				break;
-			case 2:
+			case 2: //헹굼
 				if(o.getMode()) {
 					r.display();
 				}else {
@@ -50,15 +44,22 @@ public class MainClass {
 				}
 				
 				break;
-			case 3:
-			case 4: t.display();
-				
-				
-				
+			case 3: //탈수
+				if(o.getMode()) {
+					w.display();
+				}else {
+					System.out.println("세탁기 전원이 off상태 입니다.");
+				}
 				break;
-
+			case 4: //물온도
+				if(o.getMode()) {
+					t.display();
+				}else {
+					System.out.println("세탁기 전원이 off상태 입니다.");
+				}
+				break;
 			
-			case 5:
+			case 5: //건조
 				if(o.getMode()) {
 					d.display();
 				}else {
@@ -66,7 +67,7 @@ public class MainClass {
 				}
 				
 				break;
-			case 6:
+			case 6: //종료
 				System.out.println("[종료]");
 				bool = false;
 				break;
